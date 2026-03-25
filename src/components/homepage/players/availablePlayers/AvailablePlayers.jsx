@@ -1,9 +1,12 @@
 import React from 'react';
+import Card from '../../../ui/Card';
 
-const AvailablePlayers = () => {
+const AvailablePlayers = ({players}) => {
   return (
-    <div>
-      
+    <div >
+      <Card 
+      players = {players}
+      ></Card>
     </div>
   );
 };

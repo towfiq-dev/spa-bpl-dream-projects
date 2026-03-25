@@ -5,9 +5,12 @@ import Banner from './components/homepage/banner/Banner'
 import Navbar from './components/navbar/Navbar'
 import Players from './components/homepage/players/Players'
 
-const 
+const fetchPlayers = async()=>{
+  const res = await fetch('players.json')
+  return res.json()
+}
 function App() {
-
+const playersPromise = fetchPlayers()
   return (
     <section>
     <header>
@@ -17,7 +20,9 @@ function App() {
     <main>
       <Banner></Banner>
       <Suspense>
-      <Players></Players>
+      <Players 
+      playersPromise ={playersPromise}
+      ></Players>
       </Suspense>
     </main>
     <footer>
