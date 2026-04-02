@@ -1,7 +1,7 @@
 import React from 'react';
 import dollarImg from '../../assets/image.png'
 import NavbarImg from '../../assets/logo.png'
-const Navbar = () => {
+const Navbar = ({coin}) => {
   return (
     <section className='mt-2.5'>
       <nav className="navbar bg-amber-600 shadow-sm max-w-310 mx-auto rounded">
@@ -47,7 +47,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end flex gap-1">
     <span>
-      0
+      {coin}
     </span>
     <span>Coin</span>
     <img className='w-4 h-4' src={dollarImg} alt="" />

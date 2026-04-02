@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import user from '../../assets/user 1.png'
 import reports from '../../assets/report 1.png'
-const Card = ({players}) => {
+import { toast } from 'react-toastify';
+const Card = ({players, coin, setCoin, selected, setSelected}) => {
   const {image, name, country, role, rating, batingStyle, bowlingStyle, price} = players
+  const [isSelected, setIsSelected] =useState(false)
+  const handleBtn=()=>{
+      let newCoin = coin - price
+    if (newCoin >= 0) {
+      setCoin(coin - price)
+    }else{
+      toast.error('not enough your coin')
+      return
+    }
+    toast.success('successfully selected')
+    setIsSelected(true); 
+    setSelected([...selected, players])
+  }
   return (
   <div className='grid justify-center border rounded-xl py-4 bg-yellow-100 text-black mt-8 text-[17px] space-y-2'>
       <img className='w-80 h-50 rounded' src={image} alt="" />
@@ -27,7 +41,9 @@ const Card = ({players}) => {
       </div>
       <div className='flex justify-between items-center'>
         <p>Price: {price}</p>
-        <button>Choose Selected</button>
+        <button className='btn' disabled={isSelected} onClick={handleBtn}>
+            {isSelected === true? 'selected' : 'Choose Players'}
+            </button>
       </div>
     </div>
   );

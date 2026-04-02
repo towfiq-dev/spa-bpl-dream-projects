@@ -1,12 +1,12 @@
 import React from 'react';
-import footerImg from '../../assets/logo-footer.png'
+//import footerImg from '../../assets/logo-footer.png'
 const Footer = () => {
   return (
     <div className='max-w-full mx-auto'>
     <footer>
-      <div className='grid justify-center lg:absolute top-805 left-135'>
+      {/* <div className='grid justify-center'>
         <img src={footerImg} alt="" />
-      </div>
+      </div> */}
       <div className='grid justify-center my-10 bg-amber-400 py-12 max-w-180 mx-auto rounded relative top-30'>
         <div className='text-center mb-2'>
         <h2 className='font-bold text-3xl mb-1.5'>Subscribe to our Newsletter</h2>
