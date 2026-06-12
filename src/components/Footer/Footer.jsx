@@ -1,5 +1,5 @@
 import React from 'react';
-//import footerImg from '../../assets/logo-footer.png'
+
 const Footer = () => {
   return (
     <div className='max-w-full mx-auto'>
